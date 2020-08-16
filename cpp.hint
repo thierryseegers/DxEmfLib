@@ -1,0 +1,2 @@
+#define DXEMFLIB_API __declspec(dllexport)
+#define DXEMFLIB_API __declspec(dllimport)
