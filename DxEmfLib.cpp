@@ -14,8 +14,16 @@ Emf2Pdf* emf2pdf = nullptr;
 
 void DxEmfLibReset()
 {
-	if(pdf) delete pdf;
-	if(emf2pdf)  delete emf2pdf;
+	if(pdf)
+	{
+		HPDF_Free(pdf);
+		pdf = nullptr;
+	}
+
+	if(emf2pdf)
+	{
+		delete emf2pdf;
+	}
 
 	pdf = HPDF_New(0, 0);
 	emf2pdf = new Emf2Pdf(pdf);
